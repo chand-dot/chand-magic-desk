@@ -51,18 +51,41 @@
     </div>
   </section>
 
-  <section class="weekend-brief" id="weekend-brief" data-summary-ready="false" data-brief-date="" hidden>
+  <section class="weekend-brief" id="weekend-brief" data-summary-ready="false" data-brief-date="">
     <div class="brief-crest" aria-hidden="true">W</div>
     <div class="brief-copy">
       <p class="kicker">MONDAY WEEKEND BRIEF · 10:00–11:00 AM ET</p>
       <h2>What happened Saturday and Sunday</h2>
-      <p class="brief-overview">The latest weekend summary will appear here every Monday morning.</p>
-      <div class="brief-columns">
-        <div><h3>#cx_magic</h3><ul><li>Weekend activity will appear here.</li></ul></div>
-        <div><h3>#pro-outreach-magic-only</h3><ul><li>Weekend activity will appear here.</li></ul></div>
+      <div class="brief-standby">
+        <p>The section stays here. Its summary appears Monday at 10:00 AM Eastern and clears at 11:00 AM.</p>
+      </div>
+      <div class="brief-content" hidden>
+        <p class="brief-overview">The latest weekend summary will appear here every Monday morning.</p>
+        <div class="brief-columns">
+          <div><h3>#cx_magic</h3><ul><li>Weekend activity will appear here.</li></ul></div>
+          <div><h3>#pro-outreach-magic-only</h3><ul><li>Weekend activity will appear here.</li></ul></div>
+        </div>
       </div>
     </div>
-    <span class="brief-timer">Vanishes at 11:00 AM ET</span>
+    <span class="brief-timer">Next brief · Monday 10:00 AM ET</span>
+  </section>
+
+  <section class="reminders-section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">PERSONAL REMINDERS</p>
+        <h2>Set a nudge for later</h2>
+        <p>Saved only in this browser. Notifications work while the dashboard is open.</p>
+      </div>
+      <button class="text-button" id="enable-notifications" type="button">Enable notifications</button>
+    </div>
+    <form class="reminder-form" id="reminder-form">
+      <label><span>Reminder</span><input id="reminder-title" placeholder="Follow up on weekend coverage" required></label>
+      <label><span>Date and time</span><input id="reminder-due" type="datetime-local" required></label>
+      <button class="reminder-add" type="submit">Add reminder</button>
+    </form>
+    <div class="reminder-alert" id="reminder-alert" role="status" hidden></div>
+    <div class="reminder-list" id="reminder-list"></div>
   </section>
 
   <section class="work-section">
