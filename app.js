@@ -173,5 +173,5 @@ renderReminders();
 checkReminders();
 window.setInterval(checkReminders, 30_000);
 
-// A bookmarked page always loads the latest deployment; an open tab refreshes every two hours.
-window.setTimeout(() => window.location.reload(), 2 * 60 * 60 * 1000);
+// A bookmarked page always loads the latest deployment; an open tab refreshes every hour.
+window.setTimeout(() => window.location.reload(), 60 * 60 * 1000);
