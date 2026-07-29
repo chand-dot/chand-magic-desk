@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chand’s morning brief for meetings and unresolved Magic support work.">
+  <meta property="og:title" content="Chand’s Magic Desk">
+  <meta property="og:description" content="Meetings in one lane. Slack promises in another.">
+  <meta property="og:image" content="og.png">
+  <title>Chand’s Magic Desk</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    [hidden]{display:none!important}
+    .meeting-card.extra{display:none}.meeting-card.extra.shown{display:grid}
+  </style>
+</head>
+<body>
+<main>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Chand’s Magic Desk home">
+      <span class="brand-mark">CH</span><span>Chand’s Magic Desk</span>
+    </a>
+    <div class="sync"><span></span> Slack snapshot · Jul 29, 5:10 PM</div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="kicker">YOUR DAY, WITHOUT THE SCROLL</p>
+      <h1>Good morning, Chand.<br>Here’s what still needs you.</h1>
+      <p class="lede">Meetings in one lane. Slack promises in another. Nothing noisy, nothing lost.</p>
+      <div class="stats">
+        <div><strong id="open-count">9</strong><span>open Slack loops</span></div>
+        <div><strong>3</strong><span>channels watched</span></div>
+        <div><strong>14d</strong><span>meeting memory</span></div>
+      </div>
+    </div>
+    <div class="hero-orbit" aria-hidden="true">
+      <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+      <div class="orbit-card"><b>ON IT</b><em>↓</em><span>DONE</span></div>
+    </div>
+  </section>
+
+  <section class="next-meeting">
+    <div>
+      <p class="kicker">YOUR NEXT ROOM</p>
+      <h2>Weekend Needs</h2>
+      <p>Today · 3:30–4:00 PM · Denise White + Caroline Roberts</p>
+    </div>
+    <div class="meeting-actions">
+      <span class="time-pill">3:30 PM</span>
+      <a class="button primary" href="https://meet.google.com/qsk-ravd-hky" target="_blank" rel="noreferrer">Join Google Meet ↗</a>
+      <a class="button ghost" href="https://calendar.google.com/" target="_blank" rel="noreferrer">Calendar ↗</a>
+    </div>
+  </section>
+
+  <section class="work-section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">YOUR SERVICE LINE</p>
+        <h2>Open loops you marked “on it”</h2>
+        <p>Done means it leaves this desk. The original Slack message stays untouched.</p>
+      </div>
+      <button class="text-button" id="restore">Restore cleared items</button>
+    </div>
+    <div class="filters" role="group" aria-label="Filter tasks by Slack channel">
+      <button class="active" data-filter="All">All</button>
+      <button data-filter="Magic Pro Support">Magic Pro Support</button>
+      <button data-filter="CX Magic">CX Magic</button>
+      <button data-filter="Fever V3">Fever V3</button>
+    </div>
+    <div class="task-grid">
+      <article class="task-card urgent" data-task="magic-1616075" data-channel="Magic Pro Support">
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616075">✓ Done</button></div>
+        <p class="eyebrow">Fill request · Gig 1616075</p><h3>Fill Friday’s shift for JR</h3>
+        <p>Auto-select is on, overfill is off, and the request is still marked “on it” without a Done update.</p>
+        <div class="card-footer"><span>Today · 4:46 PM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785358003540549" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card" data-task="magic-1603810" data-channel="Magic Pro Support">
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1603810">✓ Done</button></div>
+        <p class="eyebrow">Pro outreach · Gig 1603810</p><h3>Reconnect with the long-term schedule candidate</h3>
+        <p>The business loved the Pro. Ask whether she still wants the Monday–Wednesday 11–7 schedule.</p>
+        <div class="card-footer"><span>Jul 28 · 11:43 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785253388031679" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card" data-task="magic-1616864" data-channel="Magic Pro Support">
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616864">✓ Done</button></div>
+        <p class="eyebrow">Training reminder · Gig 1616864</p><h3>Confirm the Creating Legends training</h3>
+        <p>The Pro needs to complete the quick training before the shift. No Done signal is visible yet.</p>
+        <div class="card-footer"><span>Jul 28 · 10:25 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785248708608649" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card urgent" data-task="cx-558437" data-channel="CX Magic">
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-558437">✓ Done</button></div>
+        <p class="eyebrow">Attendance check · Pro 558437</p><h3>Call and confirm the Pro is showing up</h3>
+        <p>Evan asked for a direct attendance check. The item is still carrying your “on it” marker.</p>
+        <div class="card-footer"><span>Today · 12:59 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785344363636849" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card urgent" data-task="cx-24-carrots" data-channel="CX Magic">
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-24-carrots">✓ Done</button></div>
+        <p class="eyebrow">Weekend coverage · 24 Carrots</p><h3>Close the weekend staffing gap</h3>
+        <p>Review every event and confirm whether the full order can be filled before the client makes other arrangements.</p>
+        <div class="card-footer"><span>Jul 28 · 8:39 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785285544547339" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card" data-task="cx-866039" data-channel="CX Magic">
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-866039">✓ Done</button></div>
+        <p class="eyebrow">Shift follow-up · Pro 866039</p><h3>Find out who checked the Pro in</h3>
+        <p>Call the Pro about the Ontario Convention Center shift and capture who they checked in with.</p>
+        <div class="card-footer"><span>Jul 27 · 5:58 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785189483104539" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card urgent" data-task="fever-531148" data-channel="Fever V3">
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-531148">✓ Done</button></div>
+        <p class="eyebrow">Acceptance nudge · Pro 531148</p><h3>Call the Pro and secure the shift</h3>
+        <p>The request is to have the Pro accept Gig 1613355. It still has your “on it” marker and no Done signal.</p>
+        <div class="card-footer"><span>Jul 28 · 4:47 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1785271673507629" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card" data-task="fever-1589584" data-channel="Fever V3">
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-1589584">✓ Done</button></div>
+        <p class="eyebrow">Fever coverage · Gig 1589584</p><h3>Send the remaining staff nudges</h3>
+        <p>This weekend shift has stayed on the watch list. Confirm the latest fill count after outreach.</p>
+        <div class="card-footer"><span>Jul 22 · 4:29 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784752147691059" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <article class="task-card" data-task="fever-weekend" data-channel="Fever V3">
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-weekend">✓ Done</button></div>
+        <p class="eyebrow">Weekend watch · Fever</p><h3>Resolve the older weekend coverage loop</h3>
+        <p>The shift was called out for extra attention and remains in the “on it” search without a Done marker.</p>
+        <div class="card-footer"><span>Jul 21 · 9:07 AM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784639272762119" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+      </article>
+      <div class="empty-state" id="empty-state" hidden><span>✓</span><h3>This lane is clear.</h3><p>Anything new you mark “on it” belongs here at the next sync.</p></div>
+    </div>
+  </section>
+
+  <section class="memory-section">
+    <div class="section-heading">
+      <div><p class="kicker">LAST TWO WEEKS</p><h2>Your meeting memory</h2><p>A quick trail of rooms you were in and the context worth carrying forward.</p></div>
+      <button class="text-button" id="history-toggle" data-expanded="false">Show all meetings</button>
+    </div>
+    <div class="timeline">
+      <article class="meeting-card" data-meeting="Operations Weekly"><span class="date-chip">JUL 27</span><div><h3>Operations Weekly</h3><p>Priorities, blockers, and cross-Ops coordination.</p></div><button data-clear-meeting="Operations Weekly" aria-label="Clear Operations Weekly">×</button></article>
+      <article class="meeting-card" data-meeting="At Risk Pro Connect"><span class="date-chip">JUL 24</span><div><h3>At Risk Pro Connect</h3><p>Use the At-Risk dashboard as the operating tool; focus on non-confirming Pros.</p></div><button data-clear-meeting="At Risk Pro Connect" aria-label="Clear At Risk Pro Connect">×</button></article>
+      <article class="meeting-card" data-meeting="Weekend Needs"><span class="date-chip">JUL 24</span><div><h3>Weekend Needs</h3><p>In-app chat replaces manual shift communication. Verify Ross’s client-payment status.</p></div><button data-clear-meeting="Weekend Needs" aria-label="Clear Weekend Needs">×</button></article>
+      <article class="meeting-card" data-meeting="Pro Success Weekly Sync Jul 23"><span class="date-chip">JUL 23</span><div><h3>Pro Success Weekly Sync</h3><p>Outreach moves into Command Center; use dashboard filters when capacity is tight.</p></div><button data-clear-meeting="Pro Success Weekly Sync Jul 23" aria-label="Clear Pro Success Weekly Sync">×</button></article>
+      <article class="meeting-card extra" data-meeting="Weekly 1:1"><span class="date-chip">JUL 21</span><div><h3>Weekly 1:1</h3><p>Recurring manager sync and leadership follow-through.</p></div><button data-clear-meeting="Weekly 1:1" aria-label="Clear Weekly 1:1">×</button></article>
+      <article class="meeting-card extra" data-meeting="MOps Sync"><span class="date-chip">JUL 21</span><div><h3>MOps Sync</h3><p>Recurring Operations coordination.</p></div><button data-clear-meeting="MOps Sync" aria-label="Clear MOps Sync">×</button></article>
+      <article class="meeting-card extra" data-meeting="Pro Success Weekly Sync Jul 16"><span class="date-chip">JUL 16</span><div><h3>Pro Success Weekly Sync</h3><p>Team priorities and open support loops.</p></div><button data-clear-meeting="Pro Success Weekly Sync Jul 16" aria-label="Clear Pro Success Weekly Sync">×</button></article>
+    </div>
+  </section>
+
+  <footer>
+    <div><span class="brand-mark small">CH</span><strong>Chand’s Magic Desk</strong></div>
+    <p>Built around #magic-pro-support, #cx_magic, and #fever-v3.</p>
+    <p class="fine-print">This first version is a Jul 29 snapshot. “Done” and cleared cards are saved on this device.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
