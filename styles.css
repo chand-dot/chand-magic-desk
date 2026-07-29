@@ -239,7 +239,7 @@ footer .fine-print { grid-column: 2; font-size: 12px; }
   * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }
 
-/* Shadow Command theme */
+/* Dark violet theme */
 :root {
   --ink: #eef0ff;
   --muted: #9298b6;
@@ -342,6 +342,27 @@ h1 { color: #f4f2ff; text-shadow: 0 0 42px rgba(137,91,255,.18); }
 .shadow-one { left: 10px; bottom: 24px; transform: rotate(-8deg) scale(.84); opacity: .62; }
 .shadow-two { right: 6px; bottom: 20px; transform: rotate(9deg) scale(.92); opacity: .72; }
 .shadow-three { right: 54px; top: 6px; transform: rotate(4deg) scale(.56); opacity: .42; }
+.character-frame {
+  position: relative;
+  z-index: 3;
+  width: 210px;
+  height: 260px;
+  padding: 8px;
+  border-radius: 34px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(164,125,255,.3), rgba(10,10,18,.92));
+  border: 1px solid rgba(183,151,255,.38);
+  box-shadow: 0 0 58px rgba(109,64,223,.3), 0 28px 60px rgba(0,0,0,.62);
+  transform: rotate(3deg);
+}
+.character-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 34%;
+  border-radius: 27px;
+}
 .next-meeting {
   background: linear-gradient(112deg, #17142d, #0a0a13 72%);
   border: 1px solid rgba(163,132,244,.25);
