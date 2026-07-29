@@ -40,3 +40,25 @@ document.querySelector("#restore").addEventListener("click", () => {
 });
 
 refreshTasks();
+
+const weekendBrief = document.querySelector("#weekend-brief");
+const refreshWeekendBriefWindow = () => {
+  if (!weekendBrief) return;
+  const ready = weekendBrief.dataset.summaryReady === "true";
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    weekday: "short",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date());
+  const get = (type) => parts.find((part) => part.type === type)?.value;
+  const date = `${get("year")}-${get("month")}-${get("day")}`;
+  const inWindow = get("weekday") === "Mon" && Number(get("hour")) === 10;
+  weekendBrief.hidden = !(ready && inWindow && weekendBrief.dataset.briefDate === date);
+};
+
+refreshWeekendBriefWindow();
+window.setInterval(refreshWeekendBriefWindow, 60_000);
