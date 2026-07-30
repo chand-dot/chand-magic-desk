@@ -8,7 +8,7 @@
   <meta property="og:description" content="Meetings in one lane. Slack promises in another.">
   <meta property="og:image" content="og.png">
   <title>Chand’s Magic Desk</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260730-1049">
   <style>
     [hidden]{display:none!important}
     .meeting-card.extra{display:none}.meeting-card.extra.shown{display:grid}
@@ -100,7 +100,7 @@
     </div>
     <form class="reminder-form" id="reminder-form">
       <label><span>Reminder</span><input id="reminder-title" placeholder="Follow up on weekend coverage" required></label>
-      <label><span>Date and time</span><input id="reminder-due" type="datetime-local" required></label>
+      <label><span>Date and time (Eastern)</span><input id="reminder-due" type="datetime-local" required></label>
       <button class="reminder-add" type="submit">Add reminder</button>
     </form>
     <div class="reminder-alert" id="reminder-alert" role="status" hidden></div>
@@ -204,6 +204,6 @@
     <p class="fine-print">Calendar and Slack snapshots last refreshed Jul 30 at 10:42 AM ET and refresh every hour. Sensitive notes, attendee details, and join links stay off this public page.</p>
   </footer>
 </main>
-<script src="app.js"></script>
+<script src="app.js?v=20260730-1049"></script>
 </body>
 </html>

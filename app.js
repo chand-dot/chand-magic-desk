@@ -131,10 +131,45 @@ try {
 }
 
 const saveReminders = () => localStorage.setItem(remindersKey, JSON.stringify(reminders));
+const easternDateFromInput = (value) => {
+  const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/.exec(value);
+  if (!match) return new Date(value);
+  const [, year, month, day, hour, minute] = match.map(Number);
+  const intendedUtc = Date.UTC(year, month - 1, day, hour, minute);
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  });
+  let guess = intendedUtc;
+  for (let index = 0; index < 3; index += 1) {
+    const parts = Object.fromEntries(
+      formatter.formatToParts(new Date(guess)).map((part) => [part.type, part.value]),
+    );
+    const representedUtc = Date.UTC(
+      Number(parts.year),
+      Number(parts.month) - 1,
+      Number(parts.day),
+      Number(parts.hour),
+      Number(parts.minute),
+    );
+    guess += intendedUtc - representedUtc;
+  }
+  return new Date(guess);
+};
 const formatDue = (due) => new Intl.DateTimeFormat("en-US", {
-  dateStyle: "medium",
-  timeStyle: "short",
-}).format(new Date(due));
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZone: "America/New_York",
+  timeZoneName: "short",
+}).format(easternDateFromInput(due));
 
 const renderReminders = () => {
   reminderList.replaceChildren();
@@ -147,7 +182,7 @@ const renderReminders = () => {
   }
 
   reminders
-    .sort((a, b) => new Date(a.due) - new Date(b.due))
+    .sort((a, b) => easternDateFromInput(a.due) - easternDateFromInput(b.due))
     .forEach((reminder) => {
       const item = document.createElement("article");
       item.className = `reminder-item${reminder.done ? " completed" : ""}`;
@@ -203,7 +238,7 @@ document.querySelector("#enable-notifications").addEventListener("click", async 
 const checkReminders = () => {
   let changed = false;
   reminders.forEach((reminder) => {
-    if (!reminder.done && !reminder.notified && new Date(reminder.due).getTime() <= Date.now()) {
+    if (!reminder.done && !reminder.notified && easternDateFromInput(reminder.due).getTime() <= Date.now()) {
       reminder.notified = true;
       changed = true;
       reminderAlert.hidden = false;
