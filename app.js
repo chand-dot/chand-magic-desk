@@ -100,7 +100,7 @@ const refreshWeekendBriefWindow = () => {
   const showSummary = ready && inWindow && weekendBrief.dataset.briefDate === date;
   content.hidden = !showSummary;
   standby.hidden = showSummary;
-  timer.textContent = showSummary ? "Clears at 11:00 AM ET" : "Next brief ? Monday 10:00 AM ET";
+  timer.textContent = showSummary ? "Clears at 11:00 AM ET" : "Next brief · Monday 10:00 AM ET";
 };
 
 refreshWeekendBriefWindow();
@@ -199,7 +199,7 @@ const checkReminders = () => {
       reminderAlert.hidden = false;
       reminderAlert.textContent = `Reminder: ${reminder.title}`;
       if ("Notification" in window && Notification.permission === "granted") {
-        new Notification("Chand?s Magic Desk", { body: reminder.title });
+        new Notification("Chand’s Magic Desk", { body: reminder.title });
       }
     }
   });
