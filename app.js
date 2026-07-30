@@ -39,7 +39,17 @@ const filters = document.querySelectorAll("[data-filter]");
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done";
 
-let done = JSON.parse(localStorage.getItem(doneKey) || "[]");
+const currentTaskIds = new Set(Array.from(cards, (card) => card.dataset.task));
+let done = [];
+try {
+  const savedDone = JSON.parse(localStorage.getItem(doneKey) || "[]");
+  done = Array.isArray(savedDone)
+    ? savedDone.filter((taskId) => currentTaskIds.has(taskId))
+    : [];
+} catch {
+  done = [];
+}
+localStorage.setItem(doneKey, JSON.stringify(done));
 let activeFilter = "All";
 
 function refreshTasks() {
@@ -50,7 +60,7 @@ function refreshTasks() {
     card.hidden = !show;
     if (show) visible += 1;
   });
-  document.querySelector("#open-count").textContent = String(cards.length - done.length);
+  document.querySelector("#open-count").textContent = String(Math.max(0, cards.length - done.length));
   document.querySelector("#empty-state").hidden = visible !== 0;
 }
 
