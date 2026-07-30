@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chand’s morning brief for meetings and unresolved Magic support work.">
-  <meta property="og:title" content="Chand’s Magic Desk">
+  <meta name="description" content="Chand?s morning brief for meetings and unresolved Magic support work.">
+  <meta property="og:title" content="Chand?s Magic Desk">
   <meta property="og:description" content="Meetings in one lane. Slack promises in another.">
   <meta property="og:image" content="og.png">
-  <title>Chand’s Magic Desk</title>
+  <title>Chand?s Magic Desk</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     [hidden]{display:none!important}
@@ -15,18 +15,37 @@
   </style>
 </head>
 <body>
-<main>
+<div class="password-gate" id="password-gate">
+  <div class="password-stage">
+    <img class="password-visual" src="unlock-screen.png" alt="Looks like you don't know the password">
+    <div class="password-card">
+      <span class="brand-mark password-mark">CH</span>
+      <p class="kicker">PRIVATE DESK</p>
+      <h1>Welcome back, Chand.</h1>
+      <p>Enter your password to open the dashboard.</p>
+      <form id="password-form">
+        <label for="dashboard-password">Password</label>
+        <div class="password-row">
+          <input id="dashboard-password" type="password" autocomplete="current-password" autofocus required>
+          <button type="submit">Unlock desk</button>
+        </div>
+        <p class="password-error" id="password-error" role="alert" hidden>That password is not correct.</p>
+      </form>
+    </div>
+  </div>
+</div>
+<main id="dashboard" hidden>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Chand’s Magic Desk home">
-      <span class="brand-mark">CH</span><span>Chand’s Magic Desk</span>
+    <a class="brand" href="#top" aria-label="Chand?s Magic Desk home">
+      <span class="brand-mark">CH</span><span>Chand?s Magic Desk</span>
     </a>
-    <div class="sync"><span></span> Calendar connected · refreshes every hour</div>
+    <div class="sync"><span></span> Calendar connected ? refreshes every hour</div>
   </header>
 
   <section class="hero" id="top">
     <div class="hero-copy">
       <p class="kicker">YOUR DAY, WITHOUT THE SCROLL</p>
-      <h1>Good morning, Chand.<br>Here’s what still needs you.</h1>
+      <h1>Good morning, Chand.<br>Here?s what still needs you.</h1>
       <p class="lede">Meetings in one lane. Slack promises in another. Nothing noisy, nothing lost.</p>
       <div class="stats">
         <div><strong id="open-count">9</strong><span>open Slack loops</span></div>
@@ -44,17 +63,17 @@
     <div>
       <p class="kicker">NEXT ON YOUR CALENDAR</p>
       <h2>Pro Success Weekly Sync</h2>
-      <p>Thursday, July 30 · 2:00–2:30 PM Eastern</p>
+      <p>Thursday, July 30 ? 2:00?2:30 PM Eastern</p>
     </div>
     <div class="meeting-actions">
-      <span class="time-pill">Tomorrow · 30 min</span>
+      <span class="time-pill">Tomorrow ? 30 min</span>
     </div>
   </section>
 
   <section class="weekend-brief" id="weekend-brief" data-summary-ready="false" data-brief-date="">
     <div class="brief-crest" aria-hidden="true">W</div>
     <div class="brief-copy">
-      <p class="kicker">MONDAY WEEKEND BRIEF · 10:00–11:00 AM ET</p>
+      <p class="kicker">MONDAY WEEKEND BRIEF ? 10:00?11:00 AM ET</p>
       <h2>What happened Saturday and Sunday</h2>
       <div class="brief-standby">
         <p>The section stays here. Its summary appears Monday at 10:00 AM Eastern and clears at 11:00 AM.</p>
@@ -67,7 +86,7 @@
         </div>
       </div>
     </div>
-    <span class="brief-timer">Next brief · Monday 10:00 AM ET</span>
+    <span class="brief-timer">Next brief ? Monday 10:00 AM ET</span>
   </section>
 
   <section class="reminders-section">
@@ -92,7 +111,7 @@
     <div class="section-heading">
       <div>
         <p class="kicker">YOUR SERVICE LINE</p>
-        <h2>Open loops you marked “on it”</h2>
+        <h2>Open loops you marked ?on it?</h2>
         <p>Done means it leaves this desk. The original Slack message stays untouched.</p>
       </div>
       <button class="text-button" id="restore">Restore cleared items</button>
@@ -105,60 +124,60 @@
     </div>
     <div class="task-grid">
       <article class="task-card urgent" data-task="magic-1616075" data-channel="Magic Pro Support">
-        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616075">✓ Done</button></div>
-        <p class="eyebrow">Fill request · Gig 1616075</p><h3>Fill Friday’s shift for JR</h3>
-        <p>Auto-select is on, overfill is off, and the request is still marked “on it” without a Done update.</p>
-        <div class="card-footer"><span>Today · 4:46 PM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785358003540549" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616075">? Done</button></div>
+        <p class="eyebrow">Fill request ? Gig 1616075</p><h3>Fill Friday?s shift for JR</h3>
+        <p>Auto-select is on, overfill is off, and the request is still marked ?on it? without a Done update.</p>
+        <div class="card-footer"><span>Today ? 4:46 PM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785358003540549" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card" data-task="magic-1603810" data-channel="Magic Pro Support">
-        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1603810">✓ Done</button></div>
-        <p class="eyebrow">Pro outreach · Gig 1603810</p><h3>Reconnect with the long-term schedule candidate</h3>
-        <p>The business loved the Pro. Ask whether she still wants the Monday–Wednesday 11–7 schedule.</p>
-        <div class="card-footer"><span>Jul 28 · 11:43 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785253388031679" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1603810">? Done</button></div>
+        <p class="eyebrow">Pro outreach ? Gig 1603810</p><h3>Reconnect with the long-term schedule candidate</h3>
+        <p>The business loved the Pro. Ask whether she still wants the Monday?Wednesday 11?7 schedule.</p>
+        <div class="card-footer"><span>Jul 28 ? 11:43 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785253388031679" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card" data-task="magic-1616864" data-channel="Magic Pro Support">
-        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616864">✓ Done</button></div>
-        <p class="eyebrow">Training reminder · Gig 1616864</p><h3>Confirm the Creating Legends training</h3>
+        <div class="card-top"><span class="channel channel-magic-pro-support">Magic Pro Support</span><button class="done-button" data-done="magic-1616864">? Done</button></div>
+        <p class="eyebrow">Training reminder ? Gig 1616864</p><h3>Confirm the Creating Legends training</h3>
         <p>The Pro needs to complete the quick training before the shift. No Done signal is visible yet.</p>
-        <div class="card-footer"><span>Jul 28 · 10:25 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785248708608649" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-footer"><span>Jul 28 ? 10:25 AM</span><a href="https://sidegigworks.slack.com/archives/C074EE41V19/p1785248708608649" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card urgent" data-task="cx-558437" data-channel="CX Magic">
-        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-558437">✓ Done</button></div>
-        <p class="eyebrow">Attendance check · Pro 558437</p><h3>Call and confirm the Pro is showing up</h3>
-        <p>Evan asked for a direct attendance check. The item is still carrying your “on it” marker.</p>
-        <div class="card-footer"><span>Today · 12:59 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785344363636849" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-558437">? Done</button></div>
+        <p class="eyebrow">Attendance check ? Pro 558437</p><h3>Call and confirm the Pro is showing up</h3>
+        <p>Evan asked for a direct attendance check. The item is still carrying your ?on it? marker.</p>
+        <div class="card-footer"><span>Today ? 12:59 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785344363636849" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card urgent" data-task="cx-24-carrots" data-channel="CX Magic">
-        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-24-carrots">✓ Done</button></div>
-        <p class="eyebrow">Weekend coverage · 24 Carrots</p><h3>Close the weekend staffing gap</h3>
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-24-carrots">? Done</button></div>
+        <p class="eyebrow">Weekend coverage ? 24 Carrots</p><h3>Close the weekend staffing gap</h3>
         <p>Review every event and confirm whether the full order can be filled before the client makes other arrangements.</p>
-        <div class="card-footer"><span>Jul 28 · 8:39 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785285544547339" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-footer"><span>Jul 28 ? 8:39 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785285544547339" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card" data-task="cx-866039" data-channel="CX Magic">
-        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-866039">✓ Done</button></div>
-        <p class="eyebrow">Shift follow-up · Pro 866039</p><h3>Find out who checked the Pro in</h3>
+        <div class="card-top"><span class="channel channel-cx-magic">CX Magic</span><button class="done-button" data-done="cx-866039">? Done</button></div>
+        <p class="eyebrow">Shift follow-up ? Pro 866039</p><h3>Find out who checked the Pro in</h3>
         <p>Call the Pro about the Ontario Convention Center shift and capture who they checked in with.</p>
-        <div class="card-footer"><span>Jul 27 · 5:58 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785189483104539" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-footer"><span>Jul 27 ? 5:58 PM</span><a href="https://sidegigworks.slack.com/archives/C09KSELRWH5/p1785189483104539" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card urgent" data-task="fever-531148" data-channel="Fever V3">
-        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-531148">✓ Done</button></div>
-        <p class="eyebrow">Acceptance nudge · Pro 531148</p><h3>Call the Pro and secure the shift</h3>
-        <p>The request is to have the Pro accept Gig 1613355. It still has your “on it” marker and no Done signal.</p>
-        <div class="card-footer"><span>Jul 28 · 4:47 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1785271673507629" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-531148">? Done</button></div>
+        <p class="eyebrow">Acceptance nudge ? Pro 531148</p><h3>Call the Pro and secure the shift</h3>
+        <p>The request is to have the Pro accept Gig 1613355. It still has your ?on it? marker and no Done signal.</p>
+        <div class="card-footer"><span>Jul 28 ? 4:47 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1785271673507629" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card" data-task="fever-1589584" data-channel="Fever V3">
-        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-1589584">✓ Done</button></div>
-        <p class="eyebrow">Fever coverage · Gig 1589584</p><h3>Send the remaining staff nudges</h3>
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-1589584">? Done</button></div>
+        <p class="eyebrow">Fever coverage ? Gig 1589584</p><h3>Send the remaining staff nudges</h3>
         <p>This weekend shift has stayed on the watch list. Confirm the latest fill count after outreach.</p>
-        <div class="card-footer"><span>Jul 22 · 4:29 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784752147691059" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-footer"><span>Jul 22 ? 4:29 PM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784752147691059" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
       <article class="task-card" data-task="fever-weekend" data-channel="Fever V3">
-        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-weekend">✓ Done</button></div>
-        <p class="eyebrow">Weekend watch · Fever</p><h3>Resolve the older weekend coverage loop</h3>
-        <p>The shift was called out for extra attention and remains in the “on it” search without a Done marker.</p>
-        <div class="card-footer"><span>Jul 21 · 9:07 AM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784639272762119" target="_blank" rel="noreferrer">Open in Slack ↗</a></div>
+        <div class="card-top"><span class="channel channel-fever-v3">Fever V3</span><button class="done-button" data-done="fever-weekend">? Done</button></div>
+        <p class="eyebrow">Weekend watch ? Fever</p><h3>Resolve the older weekend coverage loop</h3>
+        <p>The shift was called out for extra attention and remains in the ?on it? search without a Done marker.</p>
+        <div class="card-footer"><span>Jul 21 ? 9:07 AM</span><a href="https://sidegigworks.slack.com/archives/G09DF9QSHSS/p1784639272762119" target="_blank" rel="noreferrer">Open in Slack ?</a></div>
       </article>
-      <div class="empty-state" id="empty-state" hidden><span>✓</span><h3>This lane is clear.</h3><p>Anything new you mark “on it” belongs here at the next sync.</p></div>
+      <div class="empty-state" id="empty-state" hidden><span>?</span><h3>This lane is clear.</h3><p>Anything new you mark ?on it? belongs here at the next sync.</p></div>
     </div>
   </section>
 
@@ -167,26 +186,26 @@
       <div><p class="kicker">MEETING MEMORY</p><h2>Your schedule, without the calendar hunt</h2><p>Upcoming meetings plus the previous two weeks. Routine breaks and OOO blocks are hidden.</p></div>
     </div>
     <div class="timeline">
-      <article class="meeting-card"><span class="date-chip">JUL 16</span><div><p class="meeting-period">Past</p><h3>MOps Agents Sync</h3><p>11:15–11:45 AM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 16</span><div><p class="meeting-period">Past</p><h3>Pro Success Weekly Sync</h3><p>2:00–2:30 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 17</span><div><p class="meeting-period">Past</p><h3>Weekend Check-In</h3><p>2:30–3:00 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 17</span><div><p class="meeting-period">Past</p><h3>Magic x Chand - Assistant Sync</h3><p>2:30–3:00 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 20</span><div><p class="meeting-period">Past</p><h3>Love / Jomarc</h3><p>3:00–3:30 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 23</span><div><p class="meeting-period">Past</p><h3>Pro Success Weekly Sync</h3><p>2:00–2:30 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 24</span><div><p class="meeting-period">Past</p><h3>Weekend Check-In</h3><p>2:30–2:45 PM · Eastern</p></div><span class="meeting-status past" aria-label="Past">✓</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 30</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00–2:30 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 31</span><div><p class="meeting-period">Upcoming</p><h3>Weekend Check-In</h3><p>2:30–2:45 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">JUL 31</span><div><p class="meeting-period">Upcoming</p><h3>Magic x Chand - Assistant Sync</h3><p>2:30–3:00 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">AUG 06</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00–2:30 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">AUG 06</span><div><p class="meeting-period">Upcoming</p><h3>MOps Agents Sync</h3><p>2:30–3:00 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">AUG 07</span><div><p class="meeting-period">Upcoming</p><h3>Weekend Check-In</h3><p>2:30–2:45 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">AUG 13</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00–2:30 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
-      <article class="meeting-card"><span class="date-chip">AUG 13</span><div><p class="meeting-period">Upcoming</p><h3>MOps Agents Sync</h3><p>2:30–3:00 PM · Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">→</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 16</span><div><p class="meeting-period">Past</p><h3>MOps Agents Sync</h3><p>11:15?11:45 AM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 16</span><div><p class="meeting-period">Past</p><h3>Pro Success Weekly Sync</h3><p>2:00?2:30 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 17</span><div><p class="meeting-period">Past</p><h3>Weekend Check-In</h3><p>2:30?3:00 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 17</span><div><p class="meeting-period">Past</p><h3>Magic x Chand - Assistant Sync</h3><p>2:30?3:00 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 20</span><div><p class="meeting-period">Past</p><h3>Love / Jomarc</h3><p>3:00?3:30 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 23</span><div><p class="meeting-period">Past</p><h3>Pro Success Weekly Sync</h3><p>2:00?2:30 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 24</span><div><p class="meeting-period">Past</p><h3>Weekend Check-In</h3><p>2:30?2:45 PM ? Eastern</p></div><span class="meeting-status past" aria-label="Past">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 30</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00?2:30 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 31</span><div><p class="meeting-period">Upcoming</p><h3>Weekend Check-In</h3><p>2:30?2:45 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">JUL 31</span><div><p class="meeting-period">Upcoming</p><h3>Magic x Chand - Assistant Sync</h3><p>2:30?3:00 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">AUG 06</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00?2:30 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">AUG 06</span><div><p class="meeting-period">Upcoming</p><h3>MOps Agents Sync</h3><p>2:30?3:00 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">AUG 07</span><div><p class="meeting-period">Upcoming</p><h3>Weekend Check-In</h3><p>2:30?2:45 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">AUG 13</span><div><p class="meeting-period">Upcoming</p><h3>Pro Success Weekly Sync</h3><p>2:00?2:30 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
+      <article class="meeting-card"><span class="date-chip">AUG 13</span><div><p class="meeting-period">Upcoming</p><h3>MOps Agents Sync</h3><p>2:30?3:00 PM ? Eastern</p></div><span class="meeting-status upcoming" aria-label="Upcoming">?</span></article>
     </div>
   </section>
 
   <footer>
-    <div><span class="brand-mark small">CH</span><strong>Chand’s Magic Desk</strong></div>
+    <div><span class="brand-mark small">CH</span><strong>Chand?s Magic Desk</strong></div>
     <p>Built around #magic-pro-support, #cx_magic, and #fever-v3.</p>
     <p class="fine-print">Calendar and Slack snapshots refresh every hour. Sensitive notes, attendee details, and join links stay off this public page.</p>
   </footer>

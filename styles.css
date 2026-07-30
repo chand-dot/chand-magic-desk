@@ -258,6 +258,101 @@ body {
     linear-gradient(180deg, #05050a 0%, #0a0912 46%, #05050b 100%);
   color: var(--ink);
 }
+.password-gate {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(112, 65, 218, .28), transparent 26rem),
+    linear-gradient(180deg, #05050a, #0a0912 55%, #05050b);
+}
+.password-stage {
+  width: min(100%, 1040px);
+  display: grid;
+  grid-template-columns: minmax(320px, .9fr) minmax(390px, 1.1fr);
+  overflow: hidden;
+  border: 1px solid rgba(174, 138, 255, .34);
+  border-radius: 32px;
+  background: #090910;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, .65), 0 0 45px rgba(105, 61, 211, .16);
+}
+.password-visual {
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-right: 1px solid rgba(174, 138, 255, .2);
+}
+.password-card {
+  padding: clamp(30px, 7vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(22, 20, 37, .98), rgba(8, 8, 15, .98));
+}
+.password-mark { margin-bottom: 28px; }
+.password-card h1 {
+  margin-bottom: 14px;
+  font-size: clamp(38px, 8vw, 58px);
+}
+.password-card > p:not(.kicker) { color: #969db9; line-height: 1.6; }
+.password-card form { margin-top: 28px; }
+.password-card label {
+  display: block;
+  margin-bottom: 9px;
+  color: #aeb4cf;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.password-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+.password-row input {
+  min-width: 0;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid rgba(155, 123, 236, .3);
+  border-radius: 14px;
+  outline: none;
+  background: #0b0b14;
+  color: #f0efff;
+  font: inherit;
+}
+.password-row input:focus {
+  border-color: #9a73ef;
+  box-shadow: 0 0 0 4px rgba(132, 87, 232, .13);
+}
+.password-row button {
+  min-height: 50px;
+  padding: 12px 18px;
+  border: 1px solid #906be7;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7a52d6, #492d88);
+  color: white;
+  font-weight: 850;
+  cursor: pointer;
+}
+.password-error {
+  margin: 12px 0 0 !important;
+  color: #f3a5ca !important;
+  font-size: 13px;
+}
+@media (max-width: 520px) {
+  .password-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .password-gate { padding: 12px; align-items: start; }
+  .password-stage { grid-template-columns: 1fr; }
+  .password-visual {
+    height: min(62vh, 560px);
+    min-height: 360px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(174, 138, 255, .2);
+  }
+}
 body::before {
   content: "";
   position: fixed;

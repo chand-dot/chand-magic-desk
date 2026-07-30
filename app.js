@@ -1,3 +1,40 @@
+const passwordGate = document.querySelector("#password-gate");
+const dashboard = document.querySelector("#dashboard");
+const passwordForm = document.querySelector("#password-form");
+const passwordInput = document.querySelector("#dashboard-password");
+const passwordError = document.querySelector("#password-error");
+const accessKey = "chand-desk-access";
+const passwordHash = "4f55bc45281e8b93bbd1acdaf7fe746a46b44b3ef8a288693c2753d92e6b21fa";
+
+function unlockDashboard() {
+  passwordGate.hidden = true;
+  dashboard.hidden = false;
+}
+
+if (sessionStorage.getItem(accessKey) === "granted") {
+  unlockDashboard();
+}
+
+passwordForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const bytes = new TextEncoder().encode(passwordInput.value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  const enteredHash = Array.from(new Uint8Array(digest), (byte) =>
+    byte.toString(16).padStart(2, "0"),
+  ).join("");
+
+  if (enteredHash === passwordHash) {
+    sessionStorage.setItem(accessKey, "granted");
+    passwordError.hidden = true;
+    passwordInput.value = "";
+    unlockDashboard();
+    return;
+  }
+
+  passwordError.hidden = false;
+  passwordInput.select();
+});
+
 const filters = document.querySelectorAll("[data-filter]");
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done";
@@ -63,7 +100,7 @@ const refreshWeekendBriefWindow = () => {
   const showSummary = ready && inWindow && weekendBrief.dataset.briefDate === date;
   content.hidden = !showSummary;
   standby.hidden = showSummary;
-  timer.textContent = showSummary ? "Clears at 11:00 AM ET" : "Next brief · Monday 10:00 AM ET";
+  timer.textContent = showSummary ? "Clears at 11:00 AM ET" : "Next brief ? Monday 10:00 AM ET";
 };
 
 refreshWeekendBriefWindow();
@@ -162,7 +199,7 @@ const checkReminders = () => {
       reminderAlert.hidden = false;
       reminderAlert.textContent = `Reminder: ${reminder.title}`;
       if ("Notification" in window && Notification.permission === "granted") {
-        new Notification("Chand’s Magic Desk", { body: reminder.title });
+        new Notification("Chand?s Magic Desk", { body: reminder.title });
       }
     }
   });
