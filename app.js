@@ -38,7 +38,7 @@ passwordForm.addEventListener("submit", async (event) => {
 const filters = document.querySelectorAll("[data-filter]");
 document.querySelectorAll('[data-task][data-channel="Magic Pro Support"]').forEach((card) => card.remove());
 const cards = document.querySelectorAll("[data-task]");
-const doneKey = "chand-done";
+const doneKey = "chand-done-v2";
 
 const currentTaskIds = new Set(Array.from(cards, (card) => card.dataset.task));
 let done = [];
