@@ -43,15 +43,11 @@ const verifiedMagicTaskIds = new Set([
   "magic-1621735",
   "magic-1621734",
   "magic-1624097",
-  "magic-1620654",
-  "magic-1621470",
-  "magic-1610576",
-  "magic-1607247",
-  "magic-1603383",
 ]);
 document.querySelectorAll('[data-task][data-channel="Magic Pro Support"]').forEach((card) => {
   if (!verifiedMagicTaskIds.has(card.dataset.task)) card.remove();
 });
+document.querySelector('[data-task="cx-24-carrots"]')?.remove();
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done-v2";
 
