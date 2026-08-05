@@ -37,17 +37,15 @@ passwordForm.addEventListener("submit", async (event) => {
 
 const filters = document.querySelectorAll("[data-filter]");
 const verifiedMagicTaskIds = new Set([
-  "magic-1626241",
   "magic-1621737-aug4",
   "magic-1621738",
   "magic-1621735",
-  "magic-1621734",
-  "magic-1624097",
 ]);
 document.querySelectorAll('[data-task][data-channel="Magic Pro Support"]').forEach((card) => {
   if (!verifiedMagicTaskIds.has(card.dataset.task)) card.remove();
 });
 document.querySelector('[data-task="cx-24-carrots"]')?.remove();
+document.querySelector('[data-task="fever-new-onboarding"]')?.remove();
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done-v2";
 
