@@ -39,13 +39,13 @@ const filters = document.querySelectorAll("[data-filter]");
 const verifiedMagicTaskIds = new Set([
   "magic-1621737-aug4",
   "magic-1621738",
-  "magic-1621735",
 ]);
 document.querySelectorAll('[data-task][data-channel="Magic Pro Support"]').forEach((card) => {
   if (!verifiedMagicTaskIds.has(card.dataset.task)) card.remove();
 });
 document.querySelector('[data-task="cx-24-carrots"]')?.remove();
 document.querySelector('[data-task="fever-new-onboarding"]')?.remove();
+document.querySelector('[data-task="fever-phoenix-training"]')?.remove();
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done-v2";
 
