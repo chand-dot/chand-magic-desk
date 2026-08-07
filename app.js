@@ -49,6 +49,7 @@ document.querySelectorAll('[data-task][data-channel="Magic Pro Support"]').forEa
 document.querySelector('[data-task="cx-24-carrots"]')?.remove();
 document.querySelector('[data-task="fever-new-onboarding"]')?.remove();
 document.querySelector('[data-task="fever-phoenix-training"]')?.remove();
+document.querySelector('[data-task="fever-lynsie-aug8"]')?.remove();
 const cards = document.querySelectorAll("[data-task]");
 const doneKey = "chand-done-v2";
 
