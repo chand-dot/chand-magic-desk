@@ -37,6 +37,8 @@ passwordForm.addEventListener("submit", async (event) => {
 
 const filters = document.querySelectorAll("[data-filter]");
 const verifiedMagicTaskIds = new Set([
+  "magic-1630979",
+  "magic-1631341",
   "magic-1628717",
   "magic-1628709-1628711",
   "magic-1625749",
